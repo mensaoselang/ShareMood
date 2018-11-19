@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <!--主体颜色-->
+    <color name="main_color">#333</color>
+    <!--次级颜色-->
+    <color name="second_color">#333333</color>
+
+    <!--白色的字体-->
+    <color name="white_color">#ffffff</color>
+    <!--线条颜色-->
+    <color name="border_color">#cccccc</color>
+    <!--淡蓝色的字体-->
+    <color name="blue_color">#2DB4FF</color>
+
+</resources>

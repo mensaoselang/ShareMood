@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context="com.example.sharemood.ui.login.activity.LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_login_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/text_login"
+        android:textColor="@color/white_color"
+        android:textSize="@dimen/textSize_24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_login_way"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/tv_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/text_account"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="@+id/et_account"
+        app:layout_constraintEnd_toStartOf="@+id/et_account"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/et_account"
+        app:layout_constraintVertical_bias="0.636" />
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/text_password"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="@+id/et_password"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/et_password"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <CheckBox
+        android:id="@+id/cb_rb_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white_color"
+        android:textSize="@dimen/text_size_13sp"
+        android:text="@string/text_remember_password"
+        android:theme="@style/Save_CheckBox"
+        app:layout_constraintStart_toStartOf="@+id/tv_account"
+        app:layout_constraintTop_toTopOf="@+id/include" />
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_white_bg"
+        android:text="@string/text_login"
+        android:textColor="@color/blue_color"
+        android:textSize="@dimen/text_size_18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/cb_rb_password" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:textColor="@color/white_color"
+        android:textCursorDrawable="@drawable/et_cursor_bg"
+        app:layout_constraintEnd_toStartOf="@+id/iv_show_password"
+        app:layout_constraintStart_toStartOf="@+id/et_account"
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+    <EditText
+        android:id="@+id/et_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="phone"
+        android:textColor="@color/white_color"
+        android:textCursorDrawable="@drawable/et_cursor_bg"
+        app:layout_constraintEnd_toStartOf="@+id/iv_clean_up"
+        app:layout_constraintStart_toEndOf="@+id/tv_account"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_title" />
+
+
+    <TextView
+        android:id="@+id/tv_forget_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_forget_password"
+        android:textColor="@color/white_color"
+        app:layout_constraintStart_toStartOf="@+id/bt_login"
+        app:layout_constraintTop_toBottomOf="@+id/bt_login" />
+
+    <TextView
+        android:id="@+id/tv_registered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_register"
+        android:textColor="@color/white_color"
+        app:layout_constraintEnd_toEndOf="@+id/bt_login"
+        app:layout_constraintTop_toBottomOf="@+id/bt_login" />
+
+    <TextView
+        android:id="@+id/tv_login_way"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用第三方登陆"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_login"
+        app:layout_constraintVertical_bias="0.41" />
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/line_withe_include"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_password"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/et_account" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/line_withe_include"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+    <TextView
+        android:id="@+id/tv_qq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableTop="@mipmap/icon_qq"
+        android:gravity="center"
+        android:text="@string/text_qq"
+        android:textColor="@color/white_color"
+        app:layout_constraintEnd_toStartOf="@+id/tv_login_way"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_way" />
+
+    <TextView
+        android:id="@+id/tv_weixin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableTop="@mipmap/icon_weixin"
+        android:gravity="center"
+        android:text="@string/text_wechat"
+        android:textColor="@color/white_color"
+        app:layout_constraintStart_toEndOf="@+id/tv_login_way"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_way" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="40dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="40dp" />
+
+    <ImageView
+        android:id="@+id/iv_clean_up"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginBottom="3dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/include2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@+id/et_account"
+        app:srcCompat="@mipmap/ic_clean_up" />
+
+    <ImageView
+        android:id="@+id/iv_show_password"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginBottom="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/include"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@+id/et_password"
+        app:srcCompat="@mipmap/ic_show_password" />
+
+
+</android.support.constraint.ConstraintLayout>
