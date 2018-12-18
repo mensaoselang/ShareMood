@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="24"
+        android:textSize="@dimen/textSize_24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="32dp" />
+    <TextView
+        android:id="@+id/tv_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="11月"
+        app:layout_constraintEnd_toStartOf="@+id/tv_week"
+        app:layout_constraintStart_toStartOf="@+id/tv_date"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+    <TextView
+        android:id="@+id/tv_week"
+        android:layout_width="34dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="/周六"
+        app:layout_constraintEnd_toEndOf="@+id/tv_date"
+        app:layout_constraintStart_toEndOf="@+id/tv_month"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/tv_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_week"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:padding="@dimen/margin_10dp"
+                android:text="你完"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_heart_math" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_content" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageView1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_content" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_content" />
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="10dp"
+                android:text="20:55"
+                android:textSize="@dimen/text_size_9sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_time"
+                app:layout_constraintTop_toBottomOf="@+id/imageView1" />
+            <ImageView
+                android:id="@+id/iv_time"
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_time"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_time"
+                app:srcCompat="@mipmap/icon_time" />
+
+            <TextView
+                android:id="@+id/tv_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="多云"
+                android:textSize="@dimen/text_size_9sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_time"
+                app:layout_constraintStart_toEndOf="@+id/tv_time"
+                android:layout_marginLeft="8dp" />
+
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_location"
+                app:layout_constraintEnd_toStartOf="@+id/tv_location"
+                app:layout_constraintTop_toTopOf="@+id/tv_location"
+                app:srcCompat="@mipmap/icon_location"
+                android:layout_marginRight="2dp" />
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:maxEms="7"
+                android:singleLine="true"
+                android:text="中山大学新华学院东莞校区"
+                android:textSize="@dimen/text_size_9sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            <TextView
+                android:id="@+id/tv_heart_math"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="心情指数:20"
+                android:textColor="@color/main_color"
+                android:textSize="@dimen/text_size_12sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintTop_toTopOf="@+id/imageView7" />
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/icon_heart" />
+            <ImageView
+                android:id="@+id/iv_heart_color"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/blue_color" />
+
+            <TextView
+                android:id="@+id/tv_heart_colormath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="心情色彩："
+                android:textColor="@color/main_color"
+                android:textSize="@dimen/text_size_12sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_heart_color"
+                app:layout_constraintEnd_toStartOf="@+id/iv_heart_color"
+                app:layout_constraintTop_toTopOf="@+id/iv_heart_color" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_end"
+        android:visibility="gone"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="END"
+        android:textColor="#bebebe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

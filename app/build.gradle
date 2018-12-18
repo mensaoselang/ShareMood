@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.sharemood"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -16,12 +16,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    // **兼容Android6.0系统所需，如果这句话报错，可在dependencies标签下使用compile 'cn.bmob.android:http-legacy:1.0'**
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -29,4 +33,31 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar:2.3.2-beta05'
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //Bmob的jar包
+    implementation 'cn.bmob.android:bmob-sdk:3.6.8-rc4'
+    //图形表
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
+    //卡片布局
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    //下拉刷新RecyclerView
+    implementation 'com.jcodecraeer:xrecyclerview:1.5.9'
+    //轮播图
+    implementation 'com.youth.banner:banner:1.4.10'
+    //圆形头像
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    //图片裁剪选择
+    implementation 'com.jph.takephoto:takephoto_library:4.0.3'
+    //SQ数据库框架
+    implementation 'org.litepal.android:java:3.0.0'
+    //色彩选择器
+    compile('com.github.gzu-liyujiang.AndroidPicker:ColorPicker:latest.release') {
+        exclude group: 'com.android.support'
+    }
+    //滚轮选择器
+    compile 'com.contrarywind:Android-PickerView:4.1.6'
+
+    implementation 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
+    implementation 'com.alibaba:fastjson:1.1.70.android'
+    //Dialog
+    compile 'com.mylhyl:circleDialog:2.6.7'
 }

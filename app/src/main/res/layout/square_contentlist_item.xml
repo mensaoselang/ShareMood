@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrainlayout_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--<www.linwg.org.lib.LCardView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--app:cardBackgroundColor="@color/white_color"-->
+    <!--app:leftBottomCornerRadius="2dp"-->
+    <!--app:leftTopCornerRadius="2dp"-->
+    <!--app:rightBottomCornerRadius="10dp"-->
+    <!--app:rightTopCornerRadius="10dp"-->
+    <!--app:leftShadowWidth="@dimen/margin_10dp"-->
+    <!--app:layout_constraintDimensionRatio="1:1.5"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent">-->
+    <!--</www.linwg.org.lib.LCardView>-->
+    <android.support.v7.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        app:cardBackgroundColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_show"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_5dp"
+                tools:text="内容"
+                android:textSize="18sp"
+                android:textColor="@color/main_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_show" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_heart"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:src="@mipmap/icon_heart"
+                app:layout_constraintStart_toStartOf="@+id/tv_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_content"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/iv_heart_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                tools:text="25"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/main_color"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_heart"
+                app:layout_constraintStart_toEndOf="@+id/iv_heart"
+                app:layout_constraintTop_toTopOf="@+id/iv_heart"
+                android:layout_marginLeft="5dp" />
+
+            <ImageView
+                android:id="@+id/iv_heart_color"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/iv_heart_temperature"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_heart"
+                android:layout_marginLeft="2dp" />
+
+            <TextView
+                android:id="@+id/tv_color_digital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_color"
+                android:textSize="@dimen/text_size_12sp"
+                android:gravity="center"
+                android:text="心情色彩"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_heart_color"
+                app:layout_constraintStart_toEndOf="@+id/iv_heart_color"
+                app:layout_constraintTop_toTopOf="@+id/iv_heart_color"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/tv_weather_wendu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                tools:text="21℃"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/main_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_content"
+                android:layout_marginRight="8dp" />
+
+            <TextView
+                android:id="@+id/tv_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_color"
+                android:textSize="@dimen/text_size_12sp"
+                tools:text="多云"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_weather_wendu"
+                app:layout_constraintEnd_toStartOf="@+id/tv_weather_wendu"
+                android:layout_marginRight="8dp" />
+
+            <ImageView
+                android:id="@+id/iv_weather"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_weather"
+                app:layout_constraintEnd_toStartOf="@+id/tv_weather"
+                app:layout_constraintTop_toTopOf="@+id/tv_weather"
+                app:srcCompat="@mipmap/icon_weather"
+                android:layout_marginRight="5dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_head_portrait"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:src="@mipmap/logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_color_digital"
+                app:layout_constraintStart_toStartOf="@+id/iv_heart_color"
+                app:layout_constraintTop_toBottomOf="@+id/iv_heart_color" />
+
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:maxEms="4"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_12sp"
+                tools:text="闷声色狼昵称"
+                android:textColor="@color/main_color"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_head_portrait"
+                app:layout_constraintStart_toEndOf="@+id/iv_head_portrait"
+                app:layout_constraintTop_toTopOf="@+id/iv_head_portrait"
+                android:layout_marginLeft="8dp" />
+            <ImageView
+                android:id="@+id/iv_focuson"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_nickname"
+                app:layout_constraintEnd_toStartOf="@+id/tv_focuson_number"
+                app:layout_constraintTop_toTopOf="@+id/tv_nickname"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@mipmap/icon_has_focuson"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:id="@+id/tv_focuson_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="99"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/main_color"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_focuson"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_focuson"
+                android:layout_marginRight="8dp" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

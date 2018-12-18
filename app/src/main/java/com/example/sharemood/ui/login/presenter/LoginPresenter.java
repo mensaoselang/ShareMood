@@ -1,7 +1,9 @@
 package com.example.sharemood.ui.login.presenter;
 
 import android.graphics.Color;
+import android.support.design.widget.Snackbar;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
@@ -10,17 +12,69 @@ import android.widget.ImageView;
 
 import com.example.sharemood.R;
 import com.example.sharemood.base.BasePresenter;
+import com.example.sharemood.ui.login.Bean.MyUserBean;
 import com.example.sharemood.ui.login.activity.LoginActivity;
 import com.example.sharemood.utils.EditTextCheckUtil;
 import com.example.sharemood.utils.IEditTextChangeListener;
+import com.example.sharemood.utils.ToastUtil;
+
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
+import cn.droidlover.xdroidmvp.kit.Kits;
 
 /**
  * Created by acer on 2018/11/17.
  */
 
 public class LoginPresenter extends BasePresenter<LoginActivity> {
+
+    /**
+     * 登录
+     */
+    public void login(String userName,String passWord) {
+        if (TextUtils.isEmpty(userName)) {
+            ToastUtil.showShort("请输入手机号码");
+            return;
+        }
+        if (!Kits.Regular.isPhoneNumber(userName)) {
+            ToastUtil.showShort("手机号码不合法");
+            return;
+        }
+        if (TextUtils.isEmpty(passWord)) {
+            ToastUtil.showShort("密码不能为空");
+            return;
+        }
+        if (passWord.length() < 6) {
+            ToastUtil.showShort("请输入至少6位密码");
+            return;
+        }
+
+        final MyUserBean myUserBean=new MyUserBean();
+        myUserBean.setUsername(userName);
+        myUserBean.setPassword(passWord);
+        myUserBean.login(new SaveListener<MyUserBean>() {
+            @Override
+            public void done(MyUserBean myUserBean, BmobException e) {
+                if (e == null) {
+                    getV().loginSucceed(myUserBean);
+//                    MyUserBean myUserBean1 = BmobUser.getCurrentUser(MyUserBean.class);
+                } else {
+                    ToastUtil.showShort("登陆失败"+e.getMessage());
+                }
+            }
+        });
+    }
+
     //根据是否有内容改变登陆按钮状态
     public void loginButtonChange(final Button button, EditText etLoginAccount, EditText etLoginPassword){
+        if (!TextUtils.isEmpty(etLoginAccount.getText().toString().trim())&&!TextUtils.isEmpty(etLoginPassword.getText().toString().trim())) {
+            button.setTextColor(Color.parseColor("#ffffff"));
+            button.setBackgroundResource(R.drawable.button_blue_bg);
+        } else {
+            button.setTextColor(Color.parseColor("#2DB4FF"));
+            button.setBackgroundResource(R.drawable.button_white_bg);
+        }
         //1.创建工具类对象 把要改变颜色的tv先传过去
         EditTextCheckUtil.buttonChangeListener buttonChangeListener= new EditTextCheckUtil.buttonChangeListener(button);
         //2.把所有要监听的edittext都添加进去
@@ -66,6 +120,5 @@ public class LoginPresenter extends BasePresenter<LoginActivity> {
                 }
             }
         });
-
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="Diary"></dbname>
+    <version value="2"></version>
+    <list>
+        <mapping class="com.example.sharemood.diary.bean.DiarySQLBean" />
+        <mapping class="com.example.sharemood.chart.bean.ChartMoodSqlBean" />
+    </list>
+</litepal>

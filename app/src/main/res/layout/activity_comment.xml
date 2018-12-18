@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_color"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.example.sharemood.square.activity.CommentActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbars_include"/>
+    <include
+        android:id="@+id/line_gray"
+        android:layout_below="@id/toolbar"
+        layout="@layout/line_gray_include"
+        android:layout_width="match_parent"
+        android:layout_height="1px" />
+    <ScrollView
+        android:layout_below="@id/line_gray"
+        android:layout_above="@id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_portrait"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@mipmap/logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            tools:text="昵称"
+            app:layout_constraintStart_toEndOf="@+id/iv_portrait"
+            app:layout_constraintTop_toTopOf="@+id/iv_portrait" />
+        <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_nickname"
+            app:layout_constraintTop_toBottomOf="@+id/tv_date"
+            tools:text="评论内容"
+            android:layout_marginRight="16dp" />
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="11-29"
+            app:layout_constraintStart_toStartOf="@+id/tv_nickname"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nickname" />
+        <ImageView
+            android:id="@+id/iv_praise"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_portrait"
+            app:srcCompat="@mipmap/iv_gray_praise" />
+    </android.support.constraint.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/text_gray_color"/>
+    <ListView
+        android:id="@+id/comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+        <include layout="@layout/line_gray_include"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/margin_5dp"
+            android:text="已经滑到底啦"/>
+    </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:background="@color/white_color"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/line_gray_include"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/et_input_comment"
+                android:hint="说说你的看法"
+                android:background="@null"
+                android:padding="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_send"
+                android:text="发布"
+                android:textSize="@dimen/text_size_16sp"
+                android:padding="@dimen/margin_5dp"
+                android:textColor="@color/main_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

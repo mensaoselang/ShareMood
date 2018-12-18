@@ -3,18 +3,24 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
-
     <!--主体颜色-->
     <color name="main_color">#333</color>
     <!--次级颜色-->
     <color name="second_color">#333333</color>
-
     <!--白色的字体-->
     <color name="white_color">#ffffff</color>
     <!--线条颜色-->
     <color name="border_color">#cccccc</color>
     <!--淡蓝色的字体-->
-    <color name="blue_color">#2DB4FF</color>
-
+    <color name="blue_color">#2db4ff</color>
+    <!--灰色字体颜色-->
+    <color name="text_gray_color">#dadada</color>
+    <!--评论背景颜色-->
+    <color name="comment_gray_bg">#efefef</color>
+    <!--深蓝色的字体-->
+    <color name="deep_blue_color">#2289c3</color>
+    <!--灰色的字体-->
+    <color name="gray_color">#8E8E8E</color>
+    <!--菊花条背景颜色-->
+    <color name="colorLoadingProgressBg">#b1000000</color>
 </resources>

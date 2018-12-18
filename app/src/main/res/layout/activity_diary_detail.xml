@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_color"
+    tools:context="com.example.sharemood.diary.activity.DiaryDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp">
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constrainlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/et_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:hint="记录每一天"
+                android:minLines="5"
+                android:textColorHint="@color/text_gray_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            <ImageView
+                android:id="@+id/iv_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_content"
+                app:srcCompat="@mipmap/icon_weather" />
+
+            <TextView
+                android:id="@+id/tv_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                tools:text="多云"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_weather"
+                app:layout_constraintStart_toEndOf="@+id/iv_weather"
+                app:layout_constraintTop_toTopOf="@+id/iv_weather" />
+
+            <TextView
+                android:id="@+id/tv_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                tools:text="21℃"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_weather"
+                app:layout_constraintStart_toEndOf="@+id/tv_weather"
+                app:layout_constraintTop_toTopOf="@+id/tv_weather" />
+
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="78dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iv_weather"
+                app:layout_constraintTop_toBottomOf="@+id/iv_weather"
+                app:srcCompat="@mipmap/icon_location" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                tools:text="中山大学新华学院东莞校区"
+                android:maxEms="10"
+                android:enabled="true"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_location"
+                app:layout_constraintStart_toEndOf="@+id/iv_location"
+                app:layout_constraintTop_toTopOf="@+id/iv_location" />
+
+            <TextView
+                android:id="@+id/tv_heart_manth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="32dp"
+                tools:text="70"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_content" />
+
+            <TextView
+                android:id="@+id/tv_title_heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_heart"
+                android:gravity="center"
+                android:text="心情指数:"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_heart_manth"
+                app:layout_constraintEnd_toStartOf="@+id/tv_heart_manth" />
+
+            <TextView
+                android:id="@+id/tv_heart_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="心情色彩"
+                app:layout_constraintEnd_toEndOf="@+id/tv_heart_manth"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_heart" />
+
+            <ImageView
+                android:id="@+id/iv_heart_color"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_heart_color"
+                app:layout_constraintEnd_toStartOf="@+id/tv_heart_color"
+                app:layout_constraintTop_toTopOf="@+id/tv_heart_color"
+                android:background="@color/blue_color" />
+
+            <include
+                android:id="@+id/include9"
+                layout="@layout/line_gray_include"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date_number" />
+
+            <TextView
+                android:id="@+id/tv_date_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                tools:text="29"
+                android:textSize="@dimen/textSize_24sp"
+                android:textColor="@color/main_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/tv_year_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textSize="@dimen/text_size_12sp"
+                tools:text="2018年11月/周四"
+                app:layout_constraintStart_toEndOf="@+id/tv_date_number"
+                app:layout_constraintTop_toTopOf="@+id/tv_date_number"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                tools:text="14:08"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_time"
+                app:layout_constraintTop_toBottomOf="@+id/tv_year_month"
+                android:layout_marginLeft="4dp" />
+
+            <ImageView
+                android:id="@+id/iv_time"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_time"
+                app:layout_constraintStart_toEndOf="@+id/tv_date_number"
+                app:layout_constraintTop_toTopOf="@+id/tv_time"
+                app:srcCompat="@mipmap/icon_time"
+                android:layout_marginLeft="10dp" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/include9"
+                />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView1"
+                 />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        app:backgroundTint="@color/blue_color"
+        android:src="@mipmap/icon_pen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/diary_toolbars_include" />
+</FrameLayout>

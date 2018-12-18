@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_color">
+
+    <ImageView
+        android:id="@+id/iv_head_bg"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/blue_color" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_portrait"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textStyle="italic"
+        android:textSize="@dimen/text_size_16sp"
+        android:text="昵称"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_portrait"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/tv_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="男"
+        android:textSize="@dimen/text_size_16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_nickname"
+        app:layout_constraintStart_toEndOf="@+id/tv_nickname"
+        app:layout_constraintTop_toTopOf="@+id/tv_nickname"
+        android:layout_marginLeft="16dp" />
+    <TextView
+        android:id="@+id/tv_say"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textStyle="italic"
+        android:textSize="@dimen/text_size_16sp"
+        android:text="个人语录"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nickname"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_login_out"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:background="@color/blue_color"
+        android:gravity="center"
+        android:padding="@dimen/margin_10dp"
+        android:text="退出登陆"
+        android:textColor="@color/white_color"
+        android:textSize="@dimen/text_size_18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/tv_usetdata"
+        style="@style/mine_text_style"
+        android:layout_marginTop="24dp"
+        android:text="个人资料"
+        app:layout_constraintTop_toBottomOf="@+id/tv_say" />
+    <ImageView
+        android:id="@+id/imageView"
+         style="@style/mine_icon_go_style"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_usetdata"
+        app:layout_constraintEnd_toEndOf="@+id/tv_usetdata"
+        app:layout_constraintTop_toTopOf="@+id/tv_usetdata" />
+
+    <include
+        android:id="@+id/include4"
+        style="@style/mine_line_style"
+        layout="@layout/line_gray_include"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_usetdata" />
+    <TextView
+        android:id="@+id/tv_diary"
+        style="@style/mine_text_style"
+        android:text="我的日记"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/include4"/>
+    <ImageView
+        style="@style/mine_icon_go_style"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_diary"
+        app:layout_constraintEnd_toEndOf="@+id/tv_diary"
+        app:layout_constraintTop_toTopOf="@+id/tv_diary" />
+    <include
+        android:id="@+id/include5"
+        layout="@layout/line_gray_include"
+        style="@style/mine_line_style"
+        app:layout_constraintTop_toBottomOf="@+id/tv_diary"/>
+    <TextView
+        android:id="@+id/tv_focus_on"
+        style="@style/mine_text_style"
+        android:text="我的收藏"
+        app:layout_constraintTop_toBottomOf="@+id/include5"/>
+    <ImageView
+        style="@style/mine_icon_go_style"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_focus_on"
+        app:layout_constraintEnd_toEndOf="@+id/tv_focus_on"
+        app:layout_constraintTop_toTopOf="@+id/tv_focus_on" />
+    <include
+        android:id="@+id/include6"
+        layout="@layout/line_gray_include"
+        style="@style/mine_line_style"
+        app:layout_constraintTop_toBottomOf="@+id/tv_focus_on"/>
+    <TextView
+        android:id="@+id/tv_share"
+        style="@style/mine_text_style"
+        android:text="我的分享"
+        app:layout_constraintTop_toBottomOf="@+id/include6"/>
+    <ImageView
+        style="@style/mine_icon_go_style"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_share"
+        app:layout_constraintEnd_toEndOf="@+id/tv_share"
+        app:layout_constraintTop_toTopOf="@+id/tv_share" />
+    <include
+        android:id="@+id/include7"
+        layout="@layout/line_gray_include"
+        style="@style/mine_line_style"
+        app:layout_constraintTop_toBottomOf="@+id/tv_share"/>
+    <TextView
+        android:id="@+id/tv_set_up"
+        style="@style/mine_text_style"
+        android:text="设置"
+        app:layout_constraintTop_toBottomOf="@+id/include7"/>
+    <ImageView
+        style="@style/mine_icon_go_style"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_set_up"
+        app:layout_constraintEnd_toEndOf="@+id/tv_set_up"
+        app:layout_constraintTop_toTopOf="@+id/tv_set_up" />
+    <include
+        layout="@layout/line_gray_include"
+         android:layout_width="0dp"
+        android:layout_height="1px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_set_up"/>
+    <include
+        layout="@layout/line_gray_include"
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        app:layout_constraintBottom_toTopOf="@id/tv_usetdata"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_say_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textStyle="italic"
+        android:textSize="@dimen/text_size_16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_say"
+        app:layout_constraintStart_toEndOf="@+id/tv_say"
+        app:layout_constraintTop_toTopOf="@+id/tv_say"
+        android:layout_marginLeft="8dp" />
+</android.support.constraint.ConstraintLayout>

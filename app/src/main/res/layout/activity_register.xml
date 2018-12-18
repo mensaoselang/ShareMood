@@ -166,7 +166,7 @@
         android:id="@+id/include5"
         layout="@layout/line_gray_include"
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -175,7 +175,7 @@
     <include
         layout="@layout/line_gray_include"
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -184,7 +184,7 @@
     <include
         layout="@layout/line_gray_include"
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -193,7 +193,7 @@
     <include
         layout="@layout/line_gray_include"
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -201,7 +201,7 @@
 
     <TextView
         android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:text="昵称"
         android:textColor="@color/main_color"
@@ -241,7 +241,7 @@
     <include
         layout="@layout/line_gray_include"
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"

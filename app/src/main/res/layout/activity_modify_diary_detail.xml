@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_color"
+    tools:context="com.example.sharemood.diary.activity.ModifyDiaryDetailActivity">
+    <include
+        android:id="@+id/include8"
+        layout="@layout/diary_toolbars_include"/>
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constrainlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:hint="记录每一天"
+                android:gravity="top"
+                android:minLines="5"
+                android:textColorHint="@color/text_gray_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/et_content"
+                app:layout_constraintTop_toBottomOf="@+id/et_content"
+                app:srcCompat="@mipmap/icon_add_picture" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="8dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                app:srcCompat="@mipmap/icon_add_picture" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="8dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView1"
+                app:layout_constraintStart_toEndOf="@+id/imageView1"
+                app:layout_constraintTop_toTopOf="@+id/imageView1"
+                app:srcCompat="@mipmap/icon_add_picture" />
+
+            <ImageView
+                android:id="@+id/iv_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView1"
+                app:srcCompat="@mipmap/icon_weather" />
+
+            <TextView
+                android:id="@+id/tv_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="多云"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_weather"
+                app:layout_constraintStart_toEndOf="@+id/iv_weather"
+                app:layout_constraintTop_toTopOf="@+id/iv_weather" />
+
+            <TextView
+                android:id="@+id/tv_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="21℃"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_weather"
+                app:layout_constraintStart_toEndOf="@+id/tv_weather"
+                app:layout_constraintTop_toTopOf="@+id/tv_weather" />
+
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iv_weather"
+                app:layout_constraintTop_toBottomOf="@+id/iv_weather"
+                app:srcCompat="@mipmap/icon_location" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="中山大学新华学院东莞校区"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_location"
+                app:layout_constraintStart_toEndOf="@+id/iv_location"
+                app:layout_constraintTop_toTopOf="@+id/iv_location" />
+
+            <TextView
+                android:id="@+id/tv_heart_manth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="32dp"
+                android:text="70"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+            <TextView
+                android:id="@+id/tv_title_heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_heart"
+                android:gravity="center"
+                android:text="心情指数:"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_heart_manth"
+                app:layout_constraintEnd_toStartOf="@+id/tv_heart_manth" />
+
+            <TextView
+                android:id="@+id/tv_heart_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="心情色彩"
+                app:layout_constraintEnd_toEndOf="@+id/tv_heart_manth"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_heart" />
+
+            <ImageView
+                android:id="@+id/iv_heart_color"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_heart_color"
+                app:layout_constraintEnd_toStartOf="@+id/tv_heart_color"
+                app:layout_constraintTop_toTopOf="@+id/tv_heart_color"
+                app:srcCompat="@color/blue_color" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

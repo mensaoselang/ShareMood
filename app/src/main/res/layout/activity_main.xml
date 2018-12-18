@@ -5,9 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sharemood.MainActivity">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:text="首页"/>
+    <com.example.sharemood.view.NoScrollViewPager
+        android:id="@+id/vp_main_menu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <RadioButton
+            android:id="@+id/rdoBtn_index"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/selector_index"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/rdoBtn_discover"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/selector_chart"
+            android:text="图表" />
+        <RadioButton
+            android:id="@+id/rdoBtn_diary"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/selector_diary"
+            android:text="日记" />
+        <RadioButton
+            android:id="@+id/rdoBtn_mine"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/selector_mine"
+            android:text="我的" />
+    </RadioGroup>
 </android.support.constraint.ConstraintLayout>

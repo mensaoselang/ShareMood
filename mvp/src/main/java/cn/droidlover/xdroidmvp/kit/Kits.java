@@ -30,12 +30,89 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by wanglei on 2016/11/28.
  */
 
 public class Kits {
+    /**
+     * 正则表达式
+     */
+    public static class Regular {
+
+        /**
+         * 隐藏手机号码
+         *
+         * @param tel
+         * @return
+         */
+        public static String hidePhoneNumber(String tel) {
+            // 括号表示组，被替换的部分$n表示第n组的内容
+            return tel.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
+        }
+
+        /**
+         * 验证手机号码是否合法
+         */
+        public static boolean isPhoneNumber(String mobiles) {
+            String telRegex = "^((13[0-9])|(15[^4])|(18[0-9])|(17[0-8])|(147,145))\\d{8}$";
+            return !TextUtils.isEmpty(mobiles) && mobiles.matches(telRegex);
+        }
+
+
+        /**
+         * 验证身份证号码是否合法
+         */
+        public static boolean isIdCardNumber(String number) {
+            return (number.length() == 15 && number.matches("^\\d{15}"))
+                    || (number.length() == 18 && (number.matches("^\\d{17}[x,X,\\d]")));
+        }
+
+        /**
+         * 验证密码是否合法
+         */
+        public static boolean validatePass(String password, int limitMinCount, int limitMaxCount) {
+            return password.length() >= limitMinCount && password.length() <= limitMaxCount;
+        }
+
+        /**
+         * 判断是不是英文字母
+         */
+        public static boolean isECharacter(String codePoint) {
+            return codePoint.matches("^[A-Za-z]$");
+        }
+
+        /**
+         * 验证是否是邮箱
+         *
+         * @param email
+         * @return
+         */
+        public static boolean isEmail(String email) {
+            String str = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
+            Pattern p = Pattern.compile(str);
+            Matcher m = p.matcher(email);
+            return m.matches();
+        }
+
+        /**
+         * 验证是否是完好的密码
+         * 6-16
+         * 包含数字字母
+         *
+         * @param password
+         * @return
+         */
+        public static boolean isValidatePassWord(String password) {
+            String regex = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$";
+            Pattern p = Pattern.compile(regex);
+            Matcher m = p.matcher(password);
+            return m.matches();
+        }
+    }
 
     public static class Package {
         /**

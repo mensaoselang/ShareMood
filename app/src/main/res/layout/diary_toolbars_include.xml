@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_appbar_height"
+        android:background="@color/blue_color">
+        <!-- ToolBar-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_toolbar_height"
+            app:elevation="0dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleTextAppearance="@style/ToolbarTitle">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <com.example.sharemood.view.BackLinearLayout
+                    android:id="@+id/ll_toolbar_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:scaleType="center"
+                        android:src="@mipmap/icon_back_white" />
+                </com.example.sharemood.view.BackLinearLayout>
+                <TextView
+                    android:id="@+id/tv_toolbar_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    tools:text="11月28日"
+                    android:gravity="center"
+                    android:textColor="@color/white_color"
+                    android:textSize="@dimen/text_size_18sp" />
+                <TextView
+                    android:id="@+id/tv_toolbar_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    tools:text="/11:47"
+                    android:gravity="center"
+                    android:textColor="@color/white_color"
+                    android:textSize="@dimen/text_size_14sp" />
+                <LinearLayout
+                    android:id="@+id/ll_toolbar_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/tv_toolbar_share"
+                        android:src="@mipmap/icon_share"
+                        android:visibility="invisible"
+                        android:layout_marginRight="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                    <ImageView
+                        android:id="@+id/tv_toolbar_delete"
+                        android:visibility="invisible"
+                        android:layout_marginRight="@dimen/margin_15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/icon_fork"/>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+</android.support.design.widget.CoordinatorLayout>

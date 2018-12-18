@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_mood"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:background="@drawable/text_roung_blue"
+        android:textColor="@color/gray_color"
+        android:layout_margin="@dimen/margin_10dp"
+        android:paddingLeft="19dp"
+        android:paddingRight="19dp"
+        tools:text="开心"/>
+</LinearLayout>
