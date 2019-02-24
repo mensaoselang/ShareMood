@@ -96,10 +96,9 @@ public class DiaryDetailPresenter extends BasePresenter<DiaryDetailActivity> {
 
             @Override
             public void onSuccess(List<BmobFile> files,List<String> urls) {
-                //1、files-上传完成后的BmobFile集合，是为了方便大家对其上传后的数据进行操作，例如你可以将该文件保存到表中
+                //1、files-上传完成后的BmobFile集合，是为了方便大家对其上传后的
+                // 数据进行操作，例如你可以将该文件保存到表中
                 //2、urls-上传文件的完整url地址
-                int size1=urls.size();
-                int size2=filePaths.length;
                 if(urls.size()==filePaths.length){//如果数量相等，则代表文件全部上传完成
                     //do something
                     diaryShareBean.setImageFiles(files);
@@ -129,7 +128,6 @@ public class DiaryDetailPresenter extends BasePresenter<DiaryDetailActivity> {
             public void done(String s, BmobException e) {
                 if(e==null){
                     savePieChart(typeId);
-                 //   dialogUtils.dismissLoading();
                     getV().dialogUtilDismiss();//关闭菊花条
                     ToastUtil.showShort("分享成功");
                 }else{

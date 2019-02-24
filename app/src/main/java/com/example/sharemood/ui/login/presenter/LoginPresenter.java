@@ -58,8 +58,8 @@ public class LoginPresenter extends BasePresenter<LoginActivity> {
             public void done(MyUserBean myUserBean, BmobException e) {
                 if (e == null) {
                     getV().loginSucceed(myUserBean);
-//                    MyUserBean myUserBean1 = BmobUser.getCurrentUser(MyUserBean.class);
                 } else {
+                    getV().dialogUtilDismiss();
                     ToastUtil.showShort("登陆失败"+e.getMessage());
                 }
             }

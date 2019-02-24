@@ -5,6 +5,7 @@ import com.example.sharemood.bean.DiaryShareBean;
 import com.example.sharemood.bean.MoodTypeBean;
 import com.example.sharemood.ui.index.fragment.SquareFragment;
 import com.example.sharemood.ui.login.Bean.MyUserBean;
+import com.example.sharemood.utils.BmobIsLoginUtil;
 import com.example.sharemood.utils.ToastUtil;
 
 import java.util.List;
@@ -20,7 +21,7 @@ import cn.bmob.v3.listener.FindListener;
 public class SquareFgPresenter extends BasePresenter<SquareFragment> {
     public void getTitleData(){
         BmobQuery<MoodTypeBean> typeQuery=new BmobQuery<>();
-        typeQuery.setCachePolicy(BmobQuery.CachePolicy.CACHE_ELSE_NETWORK);   // 先从缓存获取数据，如果没有，再从网络获取。
+        typeQuery.setCachePolicy(BmobQuery.CachePolicy.CACHE_ELSE_NETWORK);//先从缓存获取数据，如果没有，再从网络获取。
         typeQuery.findObjects(new FindListener<MoodTypeBean>() {
             @Override
             public void done(List<MoodTypeBean> list, BmobException e) {
@@ -37,8 +38,8 @@ public class SquareFgPresenter extends BasePresenter<SquareFragment> {
         }
         dsbQuery.addWhereEqualTo("typeId", typeId);
         //包含作者信息
-        dsbQuery.include("myUserBean");
-        dsbQuery.include("objectLike");
+//        dsbQuery.include("myUserBean");
+        dsbQuery.include("objectLike,myUserBean");
         dsbQuery.findObjects(new FindListener<DiaryShareBean>() {
             @Override
             public void done(List<DiaryShareBean> object, BmobException e) {

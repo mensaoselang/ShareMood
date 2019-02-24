@@ -51,7 +51,6 @@ public class XrContentAdapter extends SimpleRecAdapter<DiaryShareBean, XrContent
         }else {
             holder.tvFocusonNumber.setText("0");
         }
-
         if (data.get(position).getImageFiles() != null) {
             if (data.get(position).getImageFiles().size() > 0) {
                 holder.ivShow.setVisibility(View.VISIBLE);

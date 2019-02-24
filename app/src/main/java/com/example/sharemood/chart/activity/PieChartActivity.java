@@ -9,6 +9,7 @@ import com.example.sharemood.R;
 import com.example.sharemood.base.BaseActivity;
 import com.example.sharemood.chart.bean.PieChartMoodBean;
 import com.example.sharemood.chart.presenter.PieChartPresenter;
+import com.example.sharemood.utils.ToastUtil;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -27,6 +28,7 @@ import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class PieChartActivity extends BaseActivity<PieChartPresenter> {
     @BindView(R.id.pieChart)
@@ -36,7 +38,7 @@ public class PieChartActivity extends BaseActivity<PieChartPresenter> {
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        tvToolbarSave.setVisibility(View.INVISIBLE);
+        tvToolbarSave.setText("截图");
         getP().getData();//获取心情饼图的数据
     }
     @Override
@@ -135,6 +137,21 @@ public class PieChartActivity extends BaseActivity<PieChartPresenter> {
         pieChart.setData(pieData);
         pieChart.highlightValues(null);
         pieChart.invalidate();
+    }
+    @OnClick(R.id.tv_toolbar_save)
+    public void onViewClicked(View view) {
+        switch (view.getId()){
+            case R.id.tv_toolbar_save:
+                saveImageth();
+                break;
+        }
+    }
+    public void saveImageth() {
+        if (pieChart.saveToGallery("pieChart"+ System.currentTimeMillis(),50)) {
+            ToastUtil.showShort("图片已保存");
+        }else {
+            ToastUtil.showShort("图片保存失败");
+        }
     }
 
     @Override

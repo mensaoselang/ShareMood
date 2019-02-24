@@ -34,7 +34,7 @@ public abstract class BaseActivity<P extends XPresent> extends XActivity<P> impl
 
 
     };
-    //    // 点击空白区域 自动隐藏软键盘
+   // 点击空白区域 自动隐藏软键盘
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {

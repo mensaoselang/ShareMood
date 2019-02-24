@@ -27,8 +27,7 @@ public class MineSharePresenter extends BasePresenter <MineShareActivity>{
             query.addWhereEqualTo("myUserBean", BmobUser.getCurrentUser(MyUserBean.class));
             query.order("-updatedAt");
             //包含作者信息
-            query.include("myUserBean");
-            query.include("objectLike");
+            query.include("objectLike,myUserBean");
             query.findObjects(new FindListener<DiaryShareBean>() {
                 @Override
                 public void done(List<DiaryShareBean> object, BmobException e) {

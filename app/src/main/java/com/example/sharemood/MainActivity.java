@@ -26,6 +26,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.bmob.v3.BmobUser;
 import cn.droidlover.xdroidmvp.base.XFragmentAdapter;
 import cn.droidlover.xdroidmvp.router.Router;
 
@@ -70,7 +71,6 @@ public class MainActivity extends BaseActivity {
         vpMainMenu.setAdapter(new XFragmentAdapter(getSupportFragmentManager(), fragmentList, null));
         vpMainMenu.setOffscreenPageLimit(fragmentList.size() - 1);//实现所有的Fragment都去预加载
         radioGroup.check(R.id.rdoBtn_index);
-
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

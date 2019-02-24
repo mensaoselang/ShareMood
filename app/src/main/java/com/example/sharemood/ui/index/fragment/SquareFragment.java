@@ -61,12 +61,8 @@ public class SquareFragment extends BaseFragment<SquareFgPresenter> {
             @Override
             public void OnItemClick(int position) {
                 startActivityForResult(new Intent(context, SquareDetailActivity.class).putExtra("DiaryShareBean",rows.get(position)), 1);
-//                    SquareDetailActivity.toSquareDetailActivity(context, rows.get(position));
             }
         });
-//        String[] contentStrs = {"周一", "周二", "周三", "周四", "周五", "周六", "周日"};
-////        titleList.addAll(Arrays.asList(titleStrs));
-//        Collections.addAll(contentList, contentStrs);
         //列表刷新监听
         xrRy.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override

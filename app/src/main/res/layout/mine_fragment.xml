@@ -21,7 +21,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="50dp"
-        android:src="@mipmap/logo"
+        android:src="@mipmap/icon_default_avatar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="16dp" />

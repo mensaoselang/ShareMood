@@ -52,7 +52,6 @@ public class SquareDetailPresenter extends BasePresenter<SquareDetailActivity> {
                 if (e == null) {
                     ToastUtil.showShort("评论发表成功");
                        getComment(diaryShareObjectId);
-                      //    getV().addCommentData(comment);
                 } else {
                     ToastUtil.showShort("评论发表失败" + e.getMessage());
                 }
@@ -68,8 +67,8 @@ public class SquareDetailPresenter extends BasePresenter<SquareDetailActivity> {
         DiaryShareBean diaryShareBean = new DiaryShareBean();
         diaryShareBean.setObjectId(diaryShareObjectId);
         query.addWhereEqualTo("diaryShare", new BmobPointer(diaryShareBean));
-        //希望同时查询该评论的发布者的信息，以及该帖子的作者的信息，这里用到上面`include`的并列对象查询和内嵌对象的查询
-//        query.include("user,diaryShare.myUserBean");
+        //希望同时查询该评论的发布者的信息，以及该帖子的作者的信息，
+        // 这里用到上面`include`的并列对象查询和内嵌对象的查
         query.include("user");//查询出发布评论的人的信息
         query.findObjects(new FindListener<CommentBean>() {
             @Override

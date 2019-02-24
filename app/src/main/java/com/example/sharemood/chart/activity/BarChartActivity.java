@@ -1,14 +1,17 @@
 package com.example.sharemood.chart.activity;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sharemood.R;
 import com.example.sharemood.base.BaseActivity;
 import com.example.sharemood.chart.bean.ChartMoodSqlBean;
 import com.example.sharemood.chart.bean.MyXFormatter;
 import com.example.sharemood.chart.presenter.BarChartPresenter;
+import com.example.sharemood.utils.ToastUtil;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -16,25 +19,25 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+import static org.litepal.LitePalApplication.getContext;
 
 public class BarChartActivity extends BaseActivity<BarChartPresenter> {
     @BindView(R.id.barchart)
     BarChart barchart;
     @BindView(R.id.tv_toolbar_save)
     TextView tvToolbarSave;
-    private BarChart barChart;
-
-    //    protected String[] weekDate = new String[]{"周一", "周二", "周三", "周四", "周五", "周六", "周日"};
-//    //1 创建类型的列表Entry ，将保留您的值：
-//    ArrayList<BarEntry> barEntryArrayList = new ArrayList<BarEntry>();
     @Override
     public void initData(Bundle savedInstanceState) {
-        tvToolbarSave.setVisibility(View.INVISIBLE);
+        tvToolbarSave.setText("截图");
+        // tvToolbarSave.setVisibility(View.INVISIBLE);
         getP().getData();//从本地数据库获取数据
     }
 
@@ -80,10 +83,20 @@ public class BarChartActivity extends BaseActivity<BarChartPresenter> {
         return new BarChartPresenter();
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+    public void saveImageth() {
+        if (barchart.saveToGallery("barchart"+ System.currentTimeMillis(),50)) {
+            ToastUtil.showShort("图片已保存");
+        }else {
+            ToastUtil.showShort("图片保存失败");
+        }
+    }
+
+    @OnClick(R.id.tv_toolbar_save)
+    public void onViewClicked(View view) {
+        switch (view.getId()){
+            case R.id.tv_toolbar_save:
+                saveImageth();
+                break;
+        }
     }
 }

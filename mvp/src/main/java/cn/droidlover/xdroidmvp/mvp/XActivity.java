@@ -37,6 +37,7 @@ public abstract class XActivity<P extends IPresent> extends RxAppCompatActivity 
         setUpTitleBar();
         getP();
 
+
         if (getLayoutId() > 0) {
             setContentView(getLayoutId());
             bindUI(null);
