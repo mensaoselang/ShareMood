@@ -25,7 +25,6 @@ public class MJsonRequest extends JsonObjectRequest {
     protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
         try {
             response.headers.put("HTTP.CONTENT_TYPE", "utf-8");
-//                String jsonString = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
             String jsonString = new String(response.data,"utf-8");
             return Response.success(new JSONObject(jsonString), HttpHeaderParser.parseCacheHeaders(response));
         }

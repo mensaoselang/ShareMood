@@ -1,8 +1,6 @@
 package com.example.sharemood.ui.login.activity;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,11 +14,11 @@ import com.example.sharemood.R;
 import com.example.sharemood.base.BaseActivity;
 import com.example.sharemood.ui.login.Bean.MyUserBean;
 import com.example.sharemood.ui.login.presenter.LoginPresenter;
+import com.example.sharemood.utils.DialogUtils.DialogUtils;
 import com.example.sharemood.utils.SharePreferenceUtil;
 import com.example.sharemood.utils.SystemUtil;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bmob.v3.BmobUser;
 import cn.droidlover.xdroidmvp.router.Router;
@@ -46,7 +44,7 @@ public class LoginActivity extends BaseActivity <LoginPresenter>{
     ImageView ivCleanUp;
     @BindView(R.id.iv_show_password)
     ImageView ivShowPassword;
-
+    DialogUtils dialogUtils=new DialogUtils(this);
     @Override
     public void initData(Bundle savedInstanceState) {
       initView();
@@ -87,6 +85,7 @@ public class LoginActivity extends BaseActivity <LoginPresenter>{
                 String userName=etAccount.getText().toString().trim();
                 String password=etPassword.getText().toString().trim();
                 getP().login(userName,password);
+                dialogUtils.showLoadingWithLabel("登陆中...");
                 break;
             case R.id.tv_forget_password:
                 ModifyPasswordActivity.toModifyPasswordActivity(this);
@@ -110,6 +109,7 @@ public class LoginActivity extends BaseActivity <LoginPresenter>{
     }
     //登陆成功
     public void loginSucceed(MyUserBean myUserBean){
+        dialogUtils.dismissLoading();
         String name=myUserBean.getUsername();
         String nickName=myUserBean.getNickName();
         String phone=myUserBean.getMobilePhoneNumber();
@@ -124,5 +124,13 @@ public class LoginActivity extends BaseActivity <LoginPresenter>{
         SharePreferenceUtil.setObjectId(bmobUser.getObjectId());
         MainActivity.toMainActivity(this);
         finish();
+    }
+    public void dialogUtilDismiss(){
+        dialogUtils.dismissLoading();
+    }
+    @Override
+    protected void onDestroy() {
+        dialogUtils.dismissLoading();
+        super.onDestroy();
     }
 }

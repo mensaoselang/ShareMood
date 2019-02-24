@@ -137,10 +137,10 @@ public class DiaryWriteActivity extends BaseActivity<DiaryWritePresenter> implem
     SimpleDateFormat simpleDay=new SimpleDateFormat("dd");
     SimpleDateFormat simpleMonth=new SimpleDateFormat("MM");
     SimpleDateFormat simpleYear=new SimpleDateFormat("yyyy");
+    long now=System.currentTimeMillis();
 
     private final int MY_PERMISSIONS_REQUEST_CALL_PHONE=1;
     private MyLocation myLocation;
-    long now=System.currentTimeMillis();
     private int type;
     private long id;
     @Override

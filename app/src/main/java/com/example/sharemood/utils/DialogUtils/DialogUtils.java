@@ -21,7 +21,17 @@ public class DialogUtils {
     public DialogUtils(Context context) {
         this.mContext = context;
     }
-
+    private volatile static DialogUtils intstance;
+    public static DialogUtils getIntstance(Context context){
+        if (intstance==null){
+            synchronized (DialogUtils.class){
+                if (intstance==null){
+                    intstance=new DialogUtils(context);
+                }
+            }
+        }
+        return intstance;
+    }
     /**
      * 显示菊花以及菊花下方的文字提示，点击外部不可取消，点击返回可以取消
      * 不接收回调接收回调

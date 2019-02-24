@@ -54,7 +54,7 @@ public class DiaryWritePresenter extends BasePresenter<DiaryWriteActivity> {
         CompressConfig config;//设置压缩属性
         config = new CompressConfig.Builder().setMaxSize(307200).create();
         getV().getTakePhoto().onEnableCompress(config,true);//压缩
-       getV().getTakePhoto().onPickFromGallery();
+        getV().getTakePhoto().onPickFromGallery();//从相册选择图片
     }
 
 
@@ -158,9 +158,6 @@ public class DiaryWritePresenter extends BasePresenter<DiaryWriteActivity> {
 
     //保存或更新SQL的心情记录表
     public void saveOrUpdateChartMoodSQL(String week,int index){
-//        Album albumToUpdate = new Album();
-//        albumToUpdate.setPrice(20.99f); // raise the price
-//        albumToUpdate.updateAll("name = ?", "album");
         ChartMoodSqlBean chartMoodSqlBean=new ChartMoodSqlBean();
         chartMoodSqlBean.setMoodIndex(index);
         chartMoodSqlBean.updateAll("dayOfWeek=?",week);

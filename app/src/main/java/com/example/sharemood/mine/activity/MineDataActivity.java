@@ -78,7 +78,9 @@ public class MineDataActivity extends BaseActivity<MineDataPresenter> implements
             etNickname.setText(myUserBean.getNickName());
             tvSex.setText(myUserBean.getSex());
             etQuotations.setText(myUserBean.getQuotations());
-            Glide.with(this).load(myUserBean.getImagePath()).into(ivHeartImage);
+            if (!"".equals(myUserBean.getImagePath())&&myUserBean.getImagePath()!=null){
+                Glide.with(this).load(myUserBean.getImagePath()).into(ivHeartImage);
+            }
         }
     }
 

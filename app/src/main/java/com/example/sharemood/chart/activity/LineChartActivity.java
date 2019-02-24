@@ -9,6 +9,7 @@ import com.example.sharemood.base.BaseActivity;
 import com.example.sharemood.chart.bean.ChartMoodSqlBean;
 import com.example.sharemood.chart.bean.MyXFormatter;
 import com.example.sharemood.chart.presenter.LineChartPresenter;
+import com.example.sharemood.utils.ToastUtil;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarEntry;
@@ -22,6 +23,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class LineChartActivity extends BaseActivity<LineChartPresenter> {
     @BindView(R.id.lineChart)
@@ -34,7 +36,7 @@ public class LineChartActivity extends BaseActivity<LineChartPresenter> {
 //    ArrayList<Entry> entries = new ArrayList<Entry>();
     @Override
     public void initData(Bundle savedInstanceState) {
-        tvToolbarSave.setVisibility(View.INVISIBLE);
+        tvToolbarSave.setText("截图");
         getP().getData();
 
     }
@@ -79,6 +81,21 @@ public class LineChartActivity extends BaseActivity<LineChartPresenter> {
         data.setDrawValues(true);
         lineChart.setData(data);
         lineChart.invalidate();
+    }
+    @OnClick(R.id.tv_toolbar_save)
+    public void onViewClicked(View view) {
+        switch (view.getId()){
+            case R.id.tv_toolbar_save:
+                saveImageth();
+                break;
+        }
+    }
+    public void saveImageth() {
+        if (lineChart.saveToGallery("barchart"+ System.currentTimeMillis(),50)) {
+            ToastUtil.showShort("图片已保存");
+        }else {
+            ToastUtil.showShort("图片保存失败");
+        }
     }
 
     @Override

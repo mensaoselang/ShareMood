@@ -29,19 +29,6 @@ import cn.bmob.v3.listener.UploadFileListener;
  */
 
 public class MineDataPresenter extends BasePresenter<MineDataActivity> {
-//    public void getMyData(){
-//        BmobQuery<MyUserBean> bmobQuery = new BmobQuery<MyUserBean>();
-//        bmobQuery.getObject(SharePreferenceUtil.getObjectId(), new QueryListener<MyUserBean>() {
-//            @Override
-//            public void done(MyUserBean myUserBean, BmobException e) {
-//                if(e==null){
-//                    getV().initView(myUserBean);
-//                }else{
-//                    ToastUtil.showShort("获取个人信息失败:"+e.getMessage());
-//                }
-//            }
-//        });
-//    }
     //打开相册获取图片
     public void getPhoto(int type){
         CompressConfig config;//设置压缩属性
@@ -132,30 +119,4 @@ public class MineDataPresenter extends BasePresenter<MineDataActivity> {
             });
         }
     }
-
-//    /**
-//     * 查询一对一关联，查询当前用户发表的所有帖子
-//     */
-//    public void queryPostAuthor() {
-//        if (BmobUser.isLogin()) {
-//            BmobQuery<DiaryShareBean> query = new BmobQuery<>();
-//            query.addWhereEqualTo("myUserBean", BmobUser.getCurrentUser(MyUserBean.class));
-//            query.order("-updatedAt");
-//            //包含作者信息
-//            query.include("myUserBean");
-//            query.findObjects(new FindListener<DiaryShareBean>() {
-//                @Override
-//                public void done(List<DiaryShareBean> object, BmobException e) {
-//                    if (e == null) {
-//                    } else {
-//                        ToastUtil.showShort("查询失败" + e.getMessage());
-//                    }
-//                }
-//
-//            });
-//        } else {
-//            ToastUtil.showShort("请先登录");
-//            //  Snackbar.make(mFabAddPost, , Snackbar.LENGTH_LONG).show();
-//        }
-//    }
 }

@@ -84,7 +84,9 @@ public class MineFragment extends BaseFragment<MinePresenter> {
         tvNickname.setText(myUserBean.getNickName());
         tvSex.setText(myUserBean.getSex());
         tvSayContent.setText(myUserBean.getQuotations());
-        Glide.with(this).load(myUserBean.getImagePath()).into(ivPortrait);
+        if (!"".equals(myUserBean.getImagePath())&&myUserBean.getImagePath()!=null){
+            Glide.with(this).load(myUserBean.getImagePath()).into(ivPortrait);
+        }
     }
 
     @Override
