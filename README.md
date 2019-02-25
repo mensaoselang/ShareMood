@@ -1,4 +1,5 @@
 # ShareMood
+Bmob的免费短信注册有数量限制。不行请更换BmobAPPkey。
 APP实现效果。UI简陋。有借鉴其他APP界面。
 ![image](https://github.com/mensaoselang/ShareMood/blob/master/images/Screenshot_2019-01-04-22-01-05-456_com.example.sharemood.png)
 ![image](https://github.com/mensaoselang/ShareMood/blob/master/images/Screenshot_2019-01-04-22-16-25-706_com.example.sharemood.png)
